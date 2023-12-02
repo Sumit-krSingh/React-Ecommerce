@@ -10,6 +10,7 @@ import { GlobalStyle } from './GlobalStyle'
 import { ThemeProvider } from 'styled-components'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ErrorPage from './ErrorPage'
 
 
 
@@ -54,6 +55,8 @@ return (
           <Route path='/contact' element={<Contact />}></Route>
           <Route path='/singleproduct/:id' element={<SingleProduct />}></Route>
           <Route path='/cart' element={<Cart />}></Route>
+          <Route path='*' element={<ErrorPage />}></Route>
+
 
 
         </Routes>

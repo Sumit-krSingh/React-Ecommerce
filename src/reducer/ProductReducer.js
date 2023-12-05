@@ -34,11 +34,11 @@ const ProductReducer = (state, action) =>{
                         return{
                             ...state,
                             isSingleLoading : false,
-                            SingleProduct : action.payload,
+                            singleProduct : action.payload,
 
                         }
 
-                        case "SINGLE_ERROR" :
+                        case "SET_SINGLE_ERROR" :
                             return{
                                 ...state,
                                 isSingleLoading: false,

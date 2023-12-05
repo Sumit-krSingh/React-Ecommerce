@@ -2,9 +2,10 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
 import reducer from '../reducer/ProductReducer';
 
+
 const AppContext = createContext();
 
-const API = "https://api.pujakaitem.com/api/products";
+const API = '/api/products';
 
 const initialState ={
     isLoading: false,
@@ -12,7 +13,7 @@ const initialState ={
     products : [],
     featureProducts: [],
     isSingleLoading : false,
-    SingleProduct : {},
+    singleProduct : {},
 
 
 
@@ -39,18 +40,18 @@ const AppProvider = ({children}) =>{
 
     };
 
-    // second Api for singleproduct call
+    // second Api for singleProduct call
 
-    const getSingleProduct = async (url) =>{
+    const getSingleProduct = async(url) =>{
         dispatch({type : "SET_SINGLE_LOADING" });
 
         try {
             const res = await axios.get(url);
-            const SingleProduct =await res.data;
+            const singleProduct = await res.data;
 
             dispatch({
                 type : "SET_SINGLE_PRODUCT",
-                payload : SingleProduct
+                payload : singleProduct,
             });
             
         } catch (error) {

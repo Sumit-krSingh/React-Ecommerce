@@ -8,7 +8,7 @@ import { useFilterContext } from './context/filter_context';
 const Products = () => {
  return (
     <Wrapper>
-      <div className="container grid-filter-column">
+      <div className="container grid grid-filter-column">
         <div>
           <FilterSection />
           </div>
@@ -28,7 +28,8 @@ const Products = () => {
 
 const Wrapper = styled.section`
 .grid-filter-column{
-  grid-template-column : 0.2fr 1fr;
+  grid-template-columns: 0.2fr 1fr;
+  gap:1rem;
 }
 
 @media(max-width: ${({theme}) =>theme.media.mobile}){

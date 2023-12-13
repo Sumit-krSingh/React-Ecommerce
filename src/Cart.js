@@ -2,9 +2,19 @@ import React from 'react'
 import styled from 'styled-components';
 import { useCartContext } from './context/cart_context'
 import CartItem from './components/CartItem';
+import {Button} from "./style/Button"
+import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
-  const {cart} = useCartContext();
+  const {cart, clearCart} = useCartContext();
+
+  if(cart.length === 0){
+    return (
+      <EmptyDiv>
+        <h3>No Item In Cart</h3>
+      </EmptyDiv>
+    )
+  }
   return (
    <Wrapper>
     <div className="container">
@@ -25,6 +35,12 @@ const Cart = () => {
         })
           }
       </div>
+      <hr />
+      <div className="cart-two-button">
+        <NavLink to ="/products"><Button>Continue to shopping</Button>
+        </NavLink>
+        <Button  className ="btn btn-clear" onClick={clearCart}> clear</Button>
+      </div>
 
     </div>
 
@@ -32,7 +48,23 @@ const Cart = () => {
   )
 };
 
+const EmptyDiv =styled.div`
+display: grid;
+place-items: center;
+height: 50vh;
+
+
+h3{
+  font-size:4.2rem;
+  font-weight: 300;
+  font-transform: capitalize;
+}`;
+
 const Wrapper = styled.section`
+
+.empty{
+
+}
 padding: 9rem 0;
 
 .grid-four-column {

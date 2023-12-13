@@ -7,7 +7,9 @@ import {Button} from '../style/Button'
 
 const FilterSection = () => {
   const {
-    filters: { text, category, color, price, maxPrice, minPrice },
+    filters: { text, category, color, 
+      price, maxPrice, minPrice 
+    },
     updateFilterValue,
     all_products,
     clearfilters,
@@ -34,9 +36,9 @@ const FilterSection = () => {
   const categoryOnlyData = getUniquedata(all_products, "category");
   const companyData = getUniquedata(all_products, "company");
   const colorsData = getUniquedata(all_products, "colors");
-  console.log(colorsData);
+  // console.log(colorsData);
 
-
+// 
   return (
     <Wrapper>
       <div className="filter-search">

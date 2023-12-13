@@ -1,11 +1,12 @@
 import axios from "axios";
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer} from "react";
 import reducer from '../reducer/ProductReducer';
 
 
 const AppContext = createContext();
 
 const API = '/api/products';
+// const API = "https://api.pujakaitem.com/api/products";
 
 const initialState ={
     isLoading: false,
@@ -20,6 +21,8 @@ const initialState ={
 }
 
 const AppProvider = ({children}) =>{
+// const [data, setData] = useState(null);
+
 
     const [state, dispatch] = useReducer(reducer, initialState);
     const getProduct = async(url) =>{
@@ -61,6 +64,8 @@ const AppProvider = ({children}) =>{
     }
     useEffect(() =>{
         getProduct(API);
+        console.log(API)
+      
 
     },[]);
 return(

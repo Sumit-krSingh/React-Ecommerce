@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Sort from './components/Sort';
 import FilterSection from './components/FilterSection';
 import ProductList from './components/ProductList';
-import { useFilterContext } from './context/filter_context';
+// import { useFilterContext } from './context/filter_context';
 
 const Products = () => {
  return (

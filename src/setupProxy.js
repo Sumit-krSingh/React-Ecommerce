@@ -7,6 +7,7 @@ module.exports = function(app) {
     createProxyMiddleware({
       target: 'https://api.pujakaitem.com',
       changeOrigin: true,
+      secure: false,
     })
   );
 };

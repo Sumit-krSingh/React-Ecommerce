@@ -121,6 +121,52 @@ const cartReducer = (state, action) => {
     }
 
   };
+
+  // logic for toatal number of quantity in cart
+  // if(action.type ==="CART_TOTAL_ITEM"){
+  //   let updatedItemVal = state.cart.reduce((initialVal, curElem) =>{
+  //     let {amount} = curElem;
+  //     initialVal = initialVal + amount;
+  //     return initialVal;
+
+  //   },0);
+  //   return {
+  //     ...state,
+  //     total_item:updatedItemVal,
+  //   }
+  // };
+  // if(action.type ==="CART_TOTAL_PRICE"){
+  //   let total_price =state.cart.reduce((initialVal,curElem) =>{
+  //     let {price, amount } =curElem;
+  //     initialVal = initialVal + price *amount;
+  //     return initialVal
+  //   },0);
+  //   return{
+  //     ...state,
+  //     total_price:total_price,
+  //   }
+  // };
+
+  // 2nd logic to simiply the above logic in shorter form
+  if(action.type ==="CART_ITEM_PRICE_TOTAL"){
+    let {total_price,total_item} =state.cart.reduce((accumalator,curElem) =>{
+      let{price,amount} =curElem;
+      accumalator.total_item += amount;
+      accumalator.total_price += price*amount;
+
+      return accumalator;
+    },{
+      total_item: 0,
+      total_price:0
+    });
+    return{
+      ...state,
+      total_price,
+      total_item,
+
+    }  
+  }
+
   return (
     state
 

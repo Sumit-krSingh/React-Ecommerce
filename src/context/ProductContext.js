@@ -4,7 +4,7 @@ import reducer from '../reducer/ProductReducer';
 
 
 const AppContext = createContext();
-
+// API url modify with the help of setupProxy.js file 
 const API = '/api/products';
 // const API = "https://api.pujakaitem.com/api/products";
 

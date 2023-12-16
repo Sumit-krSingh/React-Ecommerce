@@ -27,7 +27,10 @@ const FeatureProduct = () => {
 };
 const Wrapper = styled.section`
 padding: 9rem 0;
-background-color: ${({ theme }) => theme.colors.bg};
+// background-color: ${({ theme }) => theme.colors.bg};
+background-color:rgb(15, 15, 51);
+
+
 
 .container {
   max-width: 120rem;

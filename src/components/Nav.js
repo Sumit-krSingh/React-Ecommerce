@@ -24,6 +24,8 @@ const Nav = () => {
           font-weight: 500;
           text-transform: uppercase;
           color: ${({ theme }) => theme.colors.black};
+        
+
           transition: color 0.3s linear;
         }
 
@@ -91,6 +93,9 @@ const Nav = () => {
         .mobile-nav-icon {
           font-size: 4.2rem;
           color: ${({ theme }) => theme.colors.black};
+          
+
+          
         }
       }
 
@@ -101,6 +106,7 @@ const Nav = () => {
         top: 30%;
         right: 10%;
         color: ${({ theme }) => theme.colors.black};
+        color:white;
         z-index: 9999;
       }
 

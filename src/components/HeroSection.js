@@ -38,10 +38,14 @@ img{
 .hero-section-data{
     p{
         margin: 2rem 0;
+    color: ${({ theme }) => theme.colors.white};
+
     }
     h1{
         text-transform: capitalize;
         font-weight: bold;
+    color: ${({ theme }) => theme.colors.white};
+
 
     }
     .intro-data{

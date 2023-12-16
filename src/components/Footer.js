@@ -90,6 +90,7 @@ const Wrapper = styled.section`
       margin: auto;
       padding: 5rem 10rem;
       background-color: ${({ theme }) => theme.colors.bg};
+
       border-radius: 1rem;
       box-shadow: ${({ theme }) => theme.colors.shadowSupport};
       transform: translateY(50%);
@@ -100,15 +101,17 @@ const Wrapper = styled.section`
       }
     }
     footer{
-        background-color:#0f0f41e8;
+        // background-color:#0f0f41e8;
+      background-color: ${({ theme }) => theme.colors.bg};
+
         padding:12rem 0 5rem 0;
 
         h3{
-            color:${({theme}) =>theme.colors.hr}
+            color:${({theme}) =>theme.colors.black}
 
         }
         p{
-            color:${({theme}) =>theme.colors.white}
+            color:${({theme}) =>theme.colors.black}
 
         }
         .footer-social--icons{
@@ -118,10 +121,10 @@ const Wrapper = styled.section`
             div{
                 border-radius:50%;
                 padding:1rem;
-                border: 1px solid ${({theme}) =>theme.colors.white};
+                border: 1px solid ${({theme}) =>theme.colors.black};
 
                 .icon{
-                    color:${({theme}) =>theme.colors.white};
+                    color:${({theme}) =>theme.colors.black};
                     font-size: 2rem;
                     position:relative;
                     cursor:pointer;
